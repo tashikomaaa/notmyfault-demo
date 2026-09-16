@@ -2,7 +2,7 @@ name: Re-run flaky failures
 
 on:
   workflow_run:
-    workflows: [Flaky only]  # temporary validation workflow
+    workflows: [CI]          # the name of the workflow running notmyfault
     types: [completed]
 
 permissions:
