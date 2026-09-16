@@ -24,6 +24,7 @@ Each open pull request shows a different state of the notmyfault comment:
 | [#3 Explain how to run the tests](https://github.com/tashikomaaa/notmyfault-demo/pull/3) | Failures, **none of them the change's fault**. Quarantine lets the check pass. |
 | [#4 Find products regardless of accents again](https://github.com/tashikomaaa/notmyfault-demo/pull/4) | Fixes the test broken on `main`, which the comment lists as **fixed**. The flaky test failed, passed on a re-run, and the comment turned **green**. |
 | [#6 Load search synonyms on every query](https://github.com/tashikomaaa/notmyfault-demo/pull/6) | Tests still pass, but one got much **slower** than on `main`: 1.2 s instead of 1 ms. |
+| [#7 Round discounts down to the ten cents](https://github.com/tashikomaaa/notmyfault-demo/pull/7) | A **new failure** that does not block: the pull request **quarantines the test by hand** until 2026-10-15, while finance decides the rounding rules. |
 
 The flaky payment test also has its own issue, [#5](https://github.com/tashikomaaa/notmyfault-demo/issues/5), which notmyfault opened and keeps up to date because the workflow sets `flaky-issues: true`.
 
