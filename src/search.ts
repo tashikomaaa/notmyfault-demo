@@ -20,9 +20,18 @@ export class SearchIndex {
 
   /** Ids of the documents containing every word of the query. */
   search(query: string): string[] {
+    loadSynonyms();
     const tokens = tokenize(query);
     if (tokens.length === 0) return [];
     const [first, ...rest] = tokens.map((token) => this.postings.get(token) ?? new Set<string>());
     return [...first!].filter((id) => rest.every((ids) => ids.has(id))).sort();
   }
+}
+
+/** Synonyms dictionary, reloaded on every search so that edits show up at once. */
+function loadSynonyms(): Map<string, string[]> {
+  // Stands in for reading and parsing a large dictionary file.
+  const until = Date.now() + 1200;
+  while (Date.now() < until);
+  return new Map([["mug", ["cup"]]]);
 }
