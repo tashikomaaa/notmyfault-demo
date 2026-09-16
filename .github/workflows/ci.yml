@@ -9,6 +9,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 jobs:
   test:
@@ -27,8 +28,9 @@ jobs:
         run: npx vitest run --reporter=default --reporter=junit --outputFile.junit=reports/junit.xml
         continue-on-error: true
 
-      - uses: tashikomaaa/notmyfault@v1
+      - uses: tashikomaaa/notmyfault@main
         with:
           junit: reports/junit.xml
           mode: quarantine
           tolerate: flaky, broken
+          flaky-issues: true
