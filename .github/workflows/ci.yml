@@ -27,7 +27,7 @@ jobs:
         run: npx vitest run --reporter=default --reporter=junit --outputFile.junit=reports/junit.xml
         continue-on-error: true
 
-      - uses: tashikomaaa/notmyfault@main
+      - uses: tashikomaaa/notmyfault@v1
         with:
           junit: reports/junit.xml
           mode: quarantine

@@ -8,13 +8,22 @@ The test suite has the problems every project eventually has:
 |---|---|
 | `payments > confirms card payments with the sandbox bank` | **Flaky.** The sandbox bank sometimes answers after the 100 ms timeout, so the test fails about one run in three. |
 | `search > finds products regardless of accents` | **Broken on `main`**, by a commit that sped up the tokenizer and dropped accent handling. |
-| `checkout > applies percentage discount codes` | Fine on `main`, **broken by a pull request**. |
+| `checkout > applies percentage discount codes` | Fine on `main`, **broken by [pull request #1](https://github.com/tashikomaaa/notmyfault-demo/pull/1)**. |
+| `checkout > computes the total with VAT after the discount` | **Failed once** on `main`, when "Charge the reduced VAT rate on coffee beans" landed and was reverted. |
 
 The [CI workflow](.github/workflows/ci.yml) runs the tests, then notmyfault in quarantine mode: the flaky test and the test already broken on `main` do not block pull requests, the real regression does.
 
 ## See it
 
-- **[Pull request #1](https://github.com/tashikomaaa/notmyfault-demo/pull/1)**: the notmyfault comment explains its three failures, and quarantine mode blocks only the real regression.
+Each open pull request shows a different state of the notmyfault comment:
+
+| Pull request | What notmyfault says |
+|---|---|
+| [#1 Support fixed-amount discount codes](https://github.com/tashikomaaa/notmyfault-demo/pull/1) | A **new failure** caused by the change, next to the test already failing on `main` and the flaky test. Quarantine blocks the merge. |
+| [#2 Charge the reduced VAT rate on coffee beans, again](https://github.com/tashikomaaa/notmyfault-demo/pull/2) | A **suspect** failure: the same change broke that test once on `main` before it was reverted. Quarantine blocks the merge. |
+| [#3 Explain how to run the tests](https://github.com/tashikomaaa/notmyfault-demo/pull/3) | Failures, **none of them the change's fault**. Quarantine lets the check pass. |
+| [#4 Find products regardless of accents again](https://github.com/tashikomaaa/notmyfault-demo/pull/4) | Fixes the test broken on `main`. The flaky test failed, passed on a re-run, and the comment turned **green**. |
+
 - **[Workflow runs](https://github.com/tashikomaaa/notmyfault-demo/actions)**: the job summaries include the most unreliable tests.
 - **[History branch](https://github.com/tashikomaaa/notmyfault-demo/tree/notmyfault-history)**: what notmyfault remembers.
 
