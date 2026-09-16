@@ -14,7 +14,7 @@ The [CI workflow](.github/workflows/ci.yml) runs the tests, then notmyfault in q
 
 ## See it
 
-- **[Open pull requests](https://github.com/tashikomaaa/notmyfault-demo/pulls)**: each has a notmyfault comment explaining every failure.
+- **[Pull request #1](https://github.com/tashikomaaa/notmyfault-demo/pull/1)**: the notmyfault comment explains its three failures, and quarantine mode blocks only the real regression.
 - **[Workflow runs](https://github.com/tashikomaaa/notmyfault-demo/actions)**: the job summaries include the most unreliable tests.
 - **[History branch](https://github.com/tashikomaaa/notmyfault-demo/tree/notmyfault-history)**: what notmyfault remembers.
 
