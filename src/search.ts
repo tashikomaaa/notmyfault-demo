@@ -1,8 +1,7 @@
-/** Lowercases, removes accents and splits on anything that is not a letter or a digit. */
+/** Lowercases and splits on anything that is not a letter or a digit. */
 export function tokenize(text: string): string[] {
+  // Unicode normalization showed up at the top of the indexing profile.
   return text
-    .normalize("NFD")
-    .replace(/\p{M}/gu, "")
     .toLowerCase()
     .split(/[^\p{L}\p{N}]+/u)
     .filter(Boolean);
