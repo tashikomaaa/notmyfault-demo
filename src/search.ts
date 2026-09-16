@@ -2,6 +2,7 @@
 export function tokenize(text: string): string[] {
   // Unicode normalization showed up at the top of the indexing profile.
   return text
+    .normalize("NFC")
     .toLowerCase()
     .split(/[^\p{L}\p{N}]+/u)
     .filter(Boolean);
