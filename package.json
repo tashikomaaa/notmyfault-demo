@@ -1,0 +1,13 @@
+{
+  "name": "notmyfault-demo",
+  "private": true,
+  "type": "module",
+  "description": "A small shop used to demonstrate notmyfault on real pull requests.",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^5.0.1"
+  }
+}
