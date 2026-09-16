@@ -1,5 +1,7 @@
 # notmyfault demo
 
+[![flaky tests](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/tashikomaaa/notmyfault-demo/notmyfault-history/badges/ci-test.json)](https://github.com/tashikomaaa/notmyfault/blob/main/docs/recipes.md#show-a-flaky-tests-badge)
+
 A tiny shop (cart, payments, search) with a real test suite, used to show [notmyfault](https://github.com/tashikomaaa/notmyfault) at work on real pull requests.
 
 The test suite has the problems every project eventually has:
