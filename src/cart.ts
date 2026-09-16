@@ -18,7 +18,8 @@ export function subtotal(items: Item[]): number {
 export function applyDiscount(amount: number, code?: string): number {
   const percent = code ? PERCENT_CODES[code.toUpperCase()] : undefined;
   if (percent === undefined) return amount;
-  return Math.round(amount * (1 - percent / 100));
+  // Finance wants discounts rounded down to the ten cents.
+  return Math.floor((amount * (1 - percent / 100)) / 10) * 10;
 }
 
 /** Total in cents, discount first, then VAT. */

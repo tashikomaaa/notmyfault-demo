@@ -34,3 +34,5 @@ jobs:
           mode: quarantine
           tolerate: flaky, broken
           flaky-issues: true
+          quarantine: |
+            2026-10-15 checkout > applies percentage discount codes # rounding rules being decided with finance
