@@ -22,7 +22,7 @@ Each open pull request shows a different state of the notmyfault comment:
 | [#1 Support fixed-amount discount codes](https://github.com/tashikomaaa/notmyfault-demo/pull/1) | A **new failure** caused by the change, next to the test already failing on `main` and the flaky test. Quarantine blocks the merge. |
 | [#2 Charge the reduced VAT rate on coffee beans, again](https://github.com/tashikomaaa/notmyfault-demo/pull/2) | A **suspect** failure: the same change broke that test once on `main` before it was reverted. Quarantine blocks the merge. |
 | [#3 Explain how to run the tests](https://github.com/tashikomaaa/notmyfault-demo/pull/3) | Failures, **none of them the change's fault**. Quarantine lets the check pass. |
-| [#4 Find products regardless of accents again](https://github.com/tashikomaaa/notmyfault-demo/pull/4) | Fixes the test broken on `main`. The flaky test failed, passed on a re-run, and the comment turned **green**. |
+| [#4 Find products regardless of accents again](https://github.com/tashikomaaa/notmyfault-demo/pull/4) | Fixes the test broken on `main`, which the comment lists as **fixed**. The flaky test failed, passed on a re-run, and the comment turned **green**. |
 
 - **[Workflow runs](https://github.com/tashikomaaa/notmyfault-demo/actions)**: the job summaries include the most unreliable tests.
 - **[History branch](https://github.com/tashikomaaa/notmyfault-demo/tree/notmyfault-history)**: what notmyfault remembers.
