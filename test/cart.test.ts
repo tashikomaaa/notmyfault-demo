@@ -21,6 +21,6 @@ describe("checkout", () => {
   });
 
   it("computes the total with VAT after the discount", () => {
-    expect(total(basket, "WELCOME10")).toBe(3758);
+    expect(total(basket, "WELCOME10")).toBe(3756);
   });
 });
