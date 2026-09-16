@@ -1,0 +1,33 @@
+name: Re-run flaky failures
+
+on:
+  workflow_run:
+    workflows: [Flaky only]  # temporary validation workflow
+    types: [completed]
+
+permissions:
+  actions: write             # re-run the failed jobs
+  checks: read               # read the notice of notmyfault
+
+jobs:
+  rerun:
+    # Only the first attempt: a run failing again is not re-run forever.
+    if: github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.run_attempt == 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Re-run when every failed job only has flaky failures
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          RUN: ${{ github.event.workflow_run.id }}
+        run: |
+          failed=$(gh api "repos/$REPO/actions/runs/$RUN/jobs?per_page=100" --jq '.jobs[] | select(.conclusion == "failure") | .id')
+          [ -n "$failed" ] || exit 0
+          for job in $failed; do
+            if ! gh api "repos/$REPO/check-runs/$job/annotations?per_page=100" --jq '.[].title' | grep -qx "notmyfault: only flaky tests failed"; then
+              echo "Job $job did not fail only because of flaky tests: not re-running."
+              exit 0
+            fi
+          done
+          gh api -X POST "repos/$REPO/actions/runs/$RUN/rerun-failed-jobs"
+          echo "Only flaky tests failed: re-running the failed jobs."
