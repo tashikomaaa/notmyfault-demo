@@ -32,6 +32,7 @@ The flaky payment test also has its own issue, [#5](https://github.com/tashikoma
 
 - **[Workflow runs](https://github.com/tashikomaaa/notmyfault-demo/actions)**: the job summaries include the most unreliable tests.
 - **[History branch](https://github.com/tashikomaaa/notmyfault-demo/tree/notmyfault-history)**: what notmyfault remembers.
+- **[Flakiness report](https://tashikomaaa.github.io/notmyfault-demo/)**: the pages notmyfault writes on the history branch, published with GitHub Pages.
 
 ## License
 
