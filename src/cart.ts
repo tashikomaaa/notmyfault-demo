@@ -21,7 +21,18 @@ export function applyDiscount(amount: number, code?: string): number {
   return Math.round(amount * (1 - percent / 100));
 }
 
-/** Total in cents, discount first, then VAT. */
+/** Food is charged the reduced VAT rate. */
+const REDUCED_VAT_RATE = 0.055;
+
+function vatRateOf(item: Item, standardRate: number): number {
+  return /beans|tea/i.test(item.name) ? REDUCED_VAT_RATE : standardRate;
+}
+
+/** Total in cents, discount first, then VAT, line by line. */
 export function total(items: Item[], code?: string, vatRate = 0.2): number {
-  return Math.round(applyDiscount(subtotal(items), code) * (1 + vatRate));
+  const gross = subtotal(items);
+  const net = applyDiscount(gross, code);
+  const share = gross === 0 ? 0 : net / gross;
+  const vat = items.reduce((sum, item) => sum + item.price * item.quantity * share * vatRateOf(item, vatRate), 0);
+  return Math.round(net + vat);
 }
