@@ -1,7 +1,7 @@
 # notmyfault on GitLab: https://github.com/tashikomaaa/notmyfault/blob/main/docs/gitlab.md
 
 include:
-  - remote: https://raw.githubusercontent.com/tashikomaaa/notmyfault/0f67f0e59bbf3693d21aab11350ceca51f1df27c/templates/notmyfault.gitlab-ci.yml
+  - remote: https://raw.githubusercontent.com/tashikomaaa/notmyfault/v1/templates/notmyfault.gitlab-ci.yml
 
 # One pipeline per change: merge request pipelines, and branch pipelines
 # for branches without a merge request.
@@ -33,7 +33,6 @@ notmyfault:
   extends: .notmyfault
   needs: [test]
   variables:
-    NOTMYFAULT_REF: 0f67f0e59bbf3693d21aab11350ceca51f1df27c
     NOTMYFAULT_JUNIT: reports/junit.xml
     NOTMYFAULT_KEY: test
     NOTMYFAULT_MODE: quarantine
