@@ -1,0 +1,27 @@
+name: Dashboard
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tashikomaaa/notmyfault/dashboard@main
+        id: dashboard
+        with:
+          title: notmyfault demos
+          repositories: |
+            tashikomaaa/notmyfault
+            tashikomaaa/notmyfault-demo
+            https://gitlab.aldwin.fr/notmyfault/notmyfault-demo.git
+            tashikomaaa/does-not-exist
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dashboard
+          path: ${{ steps.dashboard.outputs.path }}
+          include-hidden-files: true
