@@ -7,7 +7,7 @@ export interface Item {
 
 const PERCENT_CODES: Record<string, number> = {
   WELCOME10: 10,
-  SUMMER20: 20,
+  SUMMER20: 25,
 };
 
 export function subtotal(items: Item[]): number {
