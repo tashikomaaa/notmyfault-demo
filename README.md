@@ -34,6 +34,10 @@ The flaky payment test also has its own issue, [#5](https://github.com/tashikoma
 - **[History branch](https://github.com/tashikomaaa/notmyfault-demo/tree/notmyfault-history)**: what notmyfault remembers.
 - **[Flakiness report](https://tashikomaaa.github.io/notmyfault-demo/)**: the pages notmyfault writes on the history branch, published with GitHub Pages.
 
+## On GitLab
+
+The same project runs on GitLab, at [gitlab.aldwin.fr/notmyfault/notmyfault-demo](https://gitlab.aldwin.fr/notmyfault/notmyfault-demo), with the [GitLab CI/CD template](https://github.com/tashikomaaa/notmyfault/blob/main/docs/gitlab.md): see [its `.gitlab-ci.yml`](.gitlab-ci.yml). Its [merge requests](https://gitlab.aldwin.fr/notmyfault/notmyfault-demo/-/merge_requests) mirror the pull requests above, with the same comments, and the failed tests in the Code Quality widget. The flaky payment test has [its issue](https://gitlab.aldwin.fr/notmyfault/notmyfault-demo/-/issues/1) there too.
+
 ## License
 
 MIT
