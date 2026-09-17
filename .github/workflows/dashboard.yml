@@ -1,7 +1,9 @@
 name: Dashboard
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [sandbox]
+    paths: [.github/workflows/dashboard.yml]
 
 permissions:
   contents: read
