@@ -10,6 +10,7 @@ permissions:
   contents: write
   pull-requests: write
   issues: write
+  checks: write
 
 jobs:
   test:
@@ -36,3 +37,4 @@ jobs:
           track-branches: sandbox
           mode: quarantine
           tolerate: flaky, broken
+          check: true
