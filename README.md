@@ -15,6 +15,15 @@ The test suite has the problems every project eventually has:
 
 The [CI workflow](.github/workflows/ci.yml) runs the tests, then notmyfault in quarantine mode: the flaky test and the test already broken on `main` do not block pull requests, the real regression does.
 
+## Run the tests
+
+```sh
+npm ci
+npm test
+```
+
+Expect the accent search test to fail, and the sandbox bank test to fail from time to time: that is the point.
+
 ## See it
 
 Each open pull request shows a different state of the notmyfault comment:
