@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, sandbox]
   pull_request:
   workflow_dispatch:
 
@@ -28,9 +28,11 @@ jobs:
         run: npx vitest run --reporter=default --reporter=junit --outputFile.junit=reports/junit.xml
         continue-on-error: true
 
-      - uses: tashikomaaa/notmyfault@v1
+      # Sandbox: tries notmyfault from main with a history of its own, away from the demo pull requests.
+      - uses: tashikomaaa/notmyfault@main
         with:
           junit: reports/junit.xml
+          key: sandbox
+          track-branches: sandbox
           mode: quarantine
           tolerate: flaky, broken
-          flaky-issues: true
