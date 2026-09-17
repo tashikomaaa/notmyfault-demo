@@ -1,0 +1,38 @@
+# notmyfault on GitLab: https://github.com/tashikomaaa/notmyfault/blob/main/docs/gitlab.md
+
+# One pipeline per change: merge request pipelines, and branch pipelines
+# for branches without a merge request.
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
+      when: never
+    - if: $CI_COMMIT_BRANCH
+
+test:
+  image: node:24
+  variables:
+    NOTMYFAULT_URL: https://raw.githubusercontent.com/tashikomaaa/notmyfault/2dab0a4a4704dd2bcf011b3b8f7d70b89a3c6653/dist/notmyfault.mjs
+    NOTMYFAULT_JUNIT: reports/junit.xml
+    NOTMYFAULT_MODE: quarantine
+    NOTMYFAULT_TOLERATE: flaky, broken
+    NOTMYFAULT_FLAKY_ISSUES: "true"
+    # NOTMYFAULT_TOKEN is a masked CI/CD variable: a project access token
+    # with the api and write_repository scopes, and the Developer role.
+  cache:
+    key:
+      files: [package-lock.json]
+    paths: [.npm/]
+  script:
+    - npm ci --cache .npm --prefer-offline
+    # The tests may fail: notmyfault decides whether the job does.
+    - npx vitest run --reporter=default --reporter=junit --outputFile.junit=reports/junit.xml || true
+    - curl -fsSL -o /tmp/notmyfault.mjs "$NOTMYFAULT_URL"
+    - node /tmp/notmyfault.mjs
+  artifacts:
+    when: always
+    paths: [notmyfault-summary.md]
+    reports:
+      junit: reports/junit.xml
+      codequality: gl-code-quality-report.json
+      dotenv: notmyfault.env
