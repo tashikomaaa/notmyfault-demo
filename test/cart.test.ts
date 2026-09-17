@@ -16,6 +16,11 @@ describe("checkout", () => {
     expect(applyDiscount(3480, "summer20")).toBe(2784);
   });
 
+  it("applies fixed-amount discount codes, never below zero", () => {
+    expect(applyDiscount(3480, "GIFT5")).toBe(2980);
+    expect(applyDiscount(300, "GIFT5")).toBe(0);
+  });
+
   it("ignores unknown discount codes", () => {
     expect(applyDiscount(3480, "FREESTUFF")).toBe(3480);
   });

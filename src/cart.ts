@@ -5,9 +5,12 @@ export interface Item {
   quantity: number;
 }
 
-const PERCENT_CODES: Record<string, number> = {
-  WELCOME10: 10,
-  SUMMER20: 20,
+type Discount = { kind: "percent"; value: number } | { kind: "fixed"; cents: number };
+
+const DISCOUNT_CODES: Record<string, Discount> = {
+  WELCOME10: { kind: "percent", value: 10 },
+  SUMMER20: { kind: "percent", value: 20 },
+  GIFT5: { kind: "fixed", cents: 500 },
 };
 
 export function subtotal(items: Item[]): number {
@@ -16,9 +19,10 @@ export function subtotal(items: Item[]): number {
 
 /** Applies a discount code to an amount in cents. Unknown codes are ignored. */
 export function applyDiscount(amount: number, code?: string): number {
-  const percent = code ? PERCENT_CODES[code.toUpperCase()] : undefined;
-  if (percent === undefined) return amount;
-  return Math.round(amount * (1 - percent / 100));
+  const discount = code ? DISCOUNT_CODES[code] : undefined;
+  if (!discount) return amount;
+  if (discount.kind === "fixed") return Math.max(0, amount - discount.cents);
+  return Math.round(amount * (1 - discount.value / 100));
 }
 
 /** Total in cents, discount first, then VAT. */
