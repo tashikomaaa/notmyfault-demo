@@ -41,3 +41,5 @@ The same project runs on GitLab, at [gitlab.aldwin.fr/notmyfault/notmyfault-demo
 ## License
 
 MIT
+
+The `sandbox` branch tries unreleased versions of notmyfault.
