@@ -1,0 +1,268 @@
+{
+ "version": 1,
+ "updatedAt": "2026-09-18T10:11:48.115Z",
+ "runs": 50,
+ "tests": {
+  "test/cart.test.ts › checkout > adds up the basket": {
+   "outcomes": "pppppppppppppppppppppppppppppppppppppppppppppppppp",
+   "lastSeen": "2026-09-18",
+   "durations": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    1,
+    2,
+    2
+   ],
+   "lastRun": 50
+  },
+  "test/cart.test.ts › checkout > applies percentage discount codes": {
+   "outcomes": "pppppppppppppppppppppppppppppppppppppppppppppppppp",
+   "lastSeen": "2026-09-18",
+   "failedOn": [
+    "0dbc60b776bd",
+    "0d92767eb8e3",
+    "a72a0d075af2",
+    "127791971772"
+   ],
+   "durations": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "lastRun": 50
+  },
+  "test/cart.test.ts › checkout > ignores unknown discount codes": {
+   "outcomes": "pppppppppppppppppppppppppppppppppppppppppppppppppp",
+   "lastSeen": "2026-09-18",
+   "durations": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "lastRun": 50
+  },
+  "test/cart.test.ts › checkout > computes the total with VAT after the discount": {
+   "outcomes": "ppppppppppppppppfppppppppppppppppppppppppppppppppp",
+   "lastSeen": "2026-09-18",
+   "failedOn": [
+    "f9e833e6aeb4",
+    "d4dc804bab0e",
+    "a72a0d075af2"
+   ],
+   "durations": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "lastRun": 50
+  },
+  "test/payments.test.ts › payments > rejects invalid amounts": {
+   "outcomes": "pppppppppppppppppppppppppppppppppppppppppppppppppp",
+   "lastSeen": "2026-09-18",
+   "durations": [
+    4,
+    3,
+    3,
+    2,
+    3,
+    2,
+    3,
+    2,
+    3,
+    3
+   ],
+   "lastRun": 50
+  },
+  "test/search.test.ts › search > splits text into lowercase words": {
+   "outcomes": "pppppppppppppppppppppppppppppppppppppppppppppppppp",
+   "lastSeen": "2026-09-18",
+   "durations": [
+    3,
+    3,
+    5,
+    3,
+    3,
+    2,
+    3,
+    3,
+    4,
+    4
+   ],
+   "lastRun": 50
+  },
+  "test/search.test.ts › search > finds products matching every word": {
+   "outcomes": "pppppppppppppppppppppppppppppppppppppppppppppppppp",
+   "lastSeen": "2026-09-18",
+   "durations": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   "lastRun": 50
+  },
+  "test/search.test.ts › search > finds products regardless of accents": {
+   "outcomes": "ppppppppppppffffffffffffffffffffffffffffffffffffff",
+   "lastSeen": "2026-09-18",
+   "failedOn": [
+    "dbb296b0d905",
+    "810e32d9a1f1",
+    "ea9cc52ff5e1",
+    "f4eb0d3b9b29",
+    "a72a0d075af2",
+    "127791971772",
+    "62a380eabf2f",
+    "ccef4b103532",
+    "47f43ff029e2",
+    "756b12a4bce1",
+    "3ed2b3f2419b",
+    "71d7db659c79",
+    "e5c56fa6c24a",
+    "f3f8cf0b91a7",
+    "30eb41ee1a4f",
+    "7e04b1fced90",
+    "2961c819459f",
+    "7b195e248b9d",
+    "509460842ea0",
+    "bd3585a4a1db"
+   ],
+   "lastFailure": "2026-09-18",
+   "errors": [
+    "e760fd28a31b"
+   ],
+   "durations": [
+    7,
+    7,
+    6,
+    6,
+    6,
+    6,
+    7,
+    5,
+    8,
+    7
+   ],
+   "lastRun": 50
+  },
+  "test/payments.test.ts › payments > confirms card payments with the sandbox bank": {
+   "outcomes": "pfppppppfffpfpffffppppppfpppffppffffpfpfppfppfpppf",
+   "lastSeen": "2026-09-18",
+   "failedOn": [
+    "c31e3a24a785",
+    "0dbc60b776bd",
+    "b218f366f5c1",
+    "2bfee5b97b5d",
+    "f9e833e6aeb4",
+    "b6d55361a133",
+    "0d92767eb8e3",
+    "d4dc804bab0e",
+    "8ded1ba80ce4",
+    "758d344c3c8b",
+    "32dd0d12c979",
+    "810e32d9a1f1",
+    "a72a0d075af2",
+    "62a380eabf2f",
+    "ccef4b103532",
+    "47f43ff029e2",
+    "3ed2b3f2419b",
+    "e5c56fa6c24a",
+    "7e04b1fced90",
+    "bd3585a4a1db"
+   ],
+   "evidence": [
+    {
+     "at": "2026-09-16T10:28:30.300Z",
+     "sha": "a6a249cc2105",
+     "kind": "rerun"
+    },
+    {
+     "at": "2026-09-16T10:33:53.596Z",
+     "sha": "c31e3a24a785",
+     "kind": "rerun"
+    },
+    {
+     "at": "2026-09-16T11:21:39.654Z",
+     "sha": "b6d55361a133",
+     "kind": "rerun"
+    },
+    {
+     "at": "2026-09-16T11:26:46.359Z",
+     "sha": "32dd0d12c979",
+     "kind": "rerun"
+    },
+    {
+     "at": "2026-09-16T14:58:35.162Z",
+     "sha": "810e32d9a1f1",
+     "kind": "rerun"
+    },
+    {
+     "at": "2026-09-16T15:24:09.417Z",
+     "sha": "ccef4b103532",
+     "kind": "rerun"
+    },
+    {
+     "at": "2026-09-16T15:35:43.365Z",
+     "sha": "3ed2b3f2419b",
+     "kind": "rerun"
+    }
+   ],
+   "lastFailure": "2026-09-18",
+   "errors": [
+    "fbdadd06363f"
+   ],
+   "durations": [
+    65,
+    69,
+    102,
+    28,
+    55,
+    102,
+    99,
+    29,
+    56,
+    103
+   ],
+   "lastRun": 50,
+   "failingSince": {
+    "sha": "bd3585a4a1db",
+    "at": "2026-09-18T10:11:48.115Z",
+    "url": "https://github.com/tashikomaaa/notmyfault-demo/commit/bd3585a4a1dbc02e1c8742e322b3b58988080337"
+   }
+  }
+ },
+ "runDurations": [
+  120
+ ]
+}

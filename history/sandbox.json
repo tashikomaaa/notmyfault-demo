@@ -1,0 +1,227 @@
+{
+ "version": 1,
+ "updatedAt": "2026-09-18T10:19:03.739Z",
+ "runs": 8,
+ "runDurations": [
+  126,
+  124,
+  124,
+  116,
+  126
+ ],
+ "tests": {
+  "test/cart.test.ts › checkout > adds up the basket": {
+   "outcomes": "pppppppp",
+   "lastSeen": "2026-09-18",
+   "durations": [
+    1,
+    2,
+    3,
+    2,
+    2,
+    2,
+    3,
+    2
+   ],
+   "lastRun": 8
+  },
+  "test/cart.test.ts › checkout > applies percentage discount codes": {
+   "outcomes": "pppppppp",
+   "lastSeen": "2026-09-18",
+   "failedOn": [
+    "0af963a20372",
+    "da485b8221c4",
+    "5b9ce180a16f",
+    "1dd869ed73a7"
+   ],
+   "durations": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "lastRun": 8
+  },
+  "test/cart.test.ts › checkout > ignores unknown discount codes": {
+   "outcomes": "pppppppp",
+   "lastSeen": "2026-09-18",
+   "durations": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "lastRun": 8
+  },
+  "test/cart.test.ts › checkout > computes the total with VAT after the discount": {
+   "outcomes": "pfffffff",
+   "lastSeen": "2026-09-18",
+   "failedOn": [
+    "33d2bf3a95c7",
+    "d74fb96dfb07",
+    "177d235109dd",
+    "f9cb95de3dbf",
+    "2199b8860f7b",
+    "06729fbcaff0",
+    "0af963a20372",
+    "0b4b4910bcf2",
+    "301a10f86aaa",
+    "da485b8221c4",
+    "e2b7652e219b",
+    "5b9ce180a16f",
+    "1dd869ed73a7"
+   ],
+   "errors": [
+    "928a49b558e1"
+   ],
+   "lastFailure": "2026-09-18",
+   "durations": [
+    0,
+    8,
+    9,
+    8,
+    6,
+    6,
+    10,
+    6
+   ],
+   "lastRun": 8,
+   "failingSince": {
+    "sha": "d74fb96dfb07",
+    "at": "2026-09-17T07:55:09.011Z",
+    "url": "https://github.com/tashikomaaa/notmyfault-demo/commit/d74fb96dfb072f68f1e1f9e3facb36c3999b27c1",
+    "change": {
+     "ref": "#8",
+     "url": "https://github.com/tashikomaaa/notmyfault-demo/pull/8"
+    }
+   }
+  },
+  "test/payments.test.ts › payments > rejects invalid amounts": {
+   "outcomes": "pppppppp",
+   "lastSeen": "2026-09-18",
+   "durations": [
+    2,
+    3,
+    4,
+    3,
+    3,
+    2,
+    2,
+    2
+   ],
+   "lastRun": 8
+  },
+  "test/search.test.ts › search > splits text into lowercase words": {
+   "outcomes": "pppppppp",
+   "lastSeen": "2026-09-18",
+   "durations": [
+    2,
+    3,
+    4,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "lastRun": 8
+  },
+  "test/search.test.ts › search > finds products matching every word": {
+   "outcomes": "pppppppp",
+   "lastSeen": "2026-09-18",
+   "durations": [
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0
+   ],
+   "lastRun": 8
+  },
+  "test/search.test.ts › search > finds products regardless of accents": {
+   "outcomes": "ffffffff",
+   "lastSeen": "2026-09-18",
+   "failedOn": [
+    "803585fb31aa",
+    "33d2bf3a95c7",
+    "d74fb96dfb07",
+    "177d235109dd",
+    "2199b8860f7b",
+    "0b4b4910bcf2",
+    "301a10f86aaa",
+    "e2b7652e219b"
+   ],
+   "errors": [
+    "e760fd28a31b"
+   ],
+   "lastFailure": "2026-09-18",
+   "durations": [
+    7,
+    7,
+    9,
+    7,
+    7,
+    8,
+    9,
+    7
+   ],
+   "lastRun": 8,
+   "failingSince": {
+    "sha": "803585fb31aa",
+    "at": "2026-09-17T07:53:56.278Z",
+    "url": "https://github.com/tashikomaaa/notmyfault-demo/commit/803585fb31aad842ae009a8319a6caee38604bb5"
+   }
+  },
+  "test/bank.test.ts › payments > confirms card payments with the sandbox bank": {
+   "outcomes": "ffffffpf",
+   "lastSeen": "2026-09-18",
+   "failedOn": [
+    "803585fb31aa",
+    "33d2bf3a95c7",
+    "d74fb96dfb07",
+    "f9cb95de3dbf",
+    "2199b8860f7b",
+    "0b4b4910bcf2",
+    "e2b7652e219b"
+   ],
+   "errors": [
+    "fbdadd06363f"
+   ],
+   "lastFailure": "2026-09-18",
+   "durations": [
+    102,
+    102,
+    102,
+    102,
+    103,
+    102,
+    88,
+    105
+   ],
+   "lastRun": 8,
+   "failingSince": {
+    "sha": "e2b7652e219b",
+    "at": "2026-09-18T08:55:27.736Z",
+    "url": "https://github.com/tashikomaaa/notmyfault-demo/commit/e2b7652e219bfda03c6500cddabf2daea1d4e1ef"
+   }
+  },
+  "test/payments.test.ts › payments > confirms card payments with the sandbox bank": {
+   "outcomes": "",
+   "lastSeen": "2026-09-18",
+   "failedOn": [
+    "5b9ce180a16f"
+   ]
+  }
+ }
+}
